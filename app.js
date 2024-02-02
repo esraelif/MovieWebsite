@@ -4,6 +4,7 @@ const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 const SEARCH_API =
     'https://api.themoviedb.org/4/search/movie?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query="'
 
+
 const form = document.getElementById('form')
 const search = document.getElementById('search')
 const main = document.getElementById('main')
@@ -24,7 +25,8 @@ form.addEventListener('submit', (e) => {
     const searchTerm = search.value
 
     if (searchTerm && searchTerm !== '') {
-        getMovies(SEARCH_API + searchTerm)
+        const T2 = `https://api.themoviedb.org/3/search/movie?query=${searchTerm}&api_key=3fd2be6f0c70a2a598f084ddfb75487c`
+        getMovies(T2)
 
         search.value = ''
     } else {
